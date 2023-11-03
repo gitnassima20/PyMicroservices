@@ -8,7 +8,11 @@ lint:
 	#flake8 or #pylint
 	pylint --disable=R,C *.py mylib/*.py
 test:
-   # Run tests
+	#test
+	python -m pytest -vv --cov=mylib test_logic.py
+build:
+	#build container
+	docker build -t deploy-fastapi .
 deploy:
    # Deploy
 all: install lint test deploy
